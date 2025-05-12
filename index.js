@@ -4,6 +4,7 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 require("./Models/db");
 const AuthRouter = require("./Routes/AuthRouter");
+const UserRouter = require("./Routes/UserRouter");
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -24,5 +25,6 @@ app.get("/", (req, res) => {
   res.send("hii");
 });
 app.use("/auth", AuthRouter);
+app.use("/api/user", UserRouter);
 
 app.listen(PORT, () => console.log(`listening to the port - ${PORT}`));

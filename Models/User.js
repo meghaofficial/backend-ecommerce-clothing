@@ -35,7 +35,7 @@ const UserSchema = new Schema(
       city: { type: String, trim: true },
       state: { type: String, trim: true },
       country: { type: String, trim: true },
-      pincode: { type: Number },
+      pincode: { type: String },
     },
     isVerified: {
       type: Boolean, 

@@ -329,6 +329,10 @@ const updateProduct = async (req, res) => {
         sell_no: req.body?.sell_no && req.body?.sell_no,
         stock: req.body?.stock && req.body?.stock,
         discounted_price: updatedDiscountPrice,
+        size: req.body?.size && req.body?.size,
+        color: req.body?.color && req.body?.color,
+        tag: req.body?.tag && req.body?.tag,
+        unique_code: req.body?.unique_code && req.body?.unique_code
       },
       { new: true }
     );

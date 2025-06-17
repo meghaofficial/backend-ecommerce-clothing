@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(
   cors({
     // origin: "http://localhost:5173",
-    origin: "https://your-frontend.vercel.app",
+    origin: "https://ecommerce-clothing-woad.vercel.app/products",
     credentials: true,
   })
 );

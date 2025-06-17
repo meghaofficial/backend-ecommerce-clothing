@@ -332,7 +332,7 @@ const updateProduct = async (req, res) => {
         size: req.body?.size && req.body?.size,
         color: req.body?.color && req.body?.color,
         tag: req.body?.tag && req.body?.tag,
-        unique_code: req.body?.unique_code && req.body?.unique_code
+        unique_code: req.body?.unique_code && req.body?.unique_code,
       },
       { new: true }
     );
@@ -409,20 +409,17 @@ const getProductByTag = async (req, res) => {
   try {
     const { tag } = req.query;
     if (!tag) {
-      const product = await ProductModel.find();
       return res.status(200).json({
-        success: true,
-        message: "All Products",
-        allProducts: product,
-        size: allProducts.length,
+        success: false,
+        message: "No tag available",
       });
     } else {
-      const filteredProducts = await ProductModel.find({ tags: tag });
+      const products = await ProductModel.find({ tag });
       return res.status(200).json({
         success: true,
         message: "All tags related Products",
-        allProducts: filteredProducts,
-        size: filteredProducts.length,
+        allProducts: products,
+        size: products.length,
       });
     }
   } catch (error) {
@@ -445,4 +442,5 @@ module.exports = {
   updateProduct,
   deleteProduct,
   deleteAllProducts,
+  getProductByTag,
 };

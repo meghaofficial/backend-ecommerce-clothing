@@ -9,6 +9,7 @@ const {
   deleteAllProducts,
   getAllTags,
   getAllSizes,
+  getProductByTag,
 } = require("../Controllers/ProductController");
 const { isAuthenticated, isAuthorized } = require("../Middlewares/Auth");
 const upload = require("../Middlewares/multer2");
@@ -26,6 +27,7 @@ router.post(
 );
 router.get("/all-products", getAllProducts);
 router.get("/all-products/:categoryId", getProductsByCategory);
+router.get("/all-product-by-tag", getProductByTag);
 
 router
   .route("/product/:id")

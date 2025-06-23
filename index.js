@@ -20,7 +20,7 @@ app.use(
     // origin: "http://localhost:5173",
     origin: [
       "http://localhost:5173",
-      "https://ecommerce-clothing-woad.vercel.app",
+      "https://ecommerce-clothing-lbp1g66q8-meghaofficials-projects.vercel.app/",
     ],
     credentials: true,
   })

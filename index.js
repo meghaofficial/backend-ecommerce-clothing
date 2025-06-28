@@ -8,6 +8,7 @@ const UserRouter = require("./Routes/UserRouter");
 const AdminRouter = require("./Routes/AdminRouter");
 const CategoryRouter = require("./Routes/CategoryRouter");
 const ProductRouter = require("./Routes/ProductRouter");
+const WishlistRouter = require("./Routes/WishlistRouter");
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -34,6 +35,6 @@ app.get("/", (req, res) => {
 app.use("/auth", AuthRouter);
 app.use("/api/user", UserRouter);
 app.use("/api/admin", AdminRouter);
-app.use("/api", [CategoryRouter, ProductRouter]);
+app.use("/api", [CategoryRouter, ProductRouter, WishlistRouter]);
 
 app.listen(PORT, () => console.log(`listening to the port - ${PORT}`));
